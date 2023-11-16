@@ -6,7 +6,7 @@ stateDiagram-v2
 
     TuningMode-->AutomaticMode: Button 2 Pressed
 
-    AutomaticMode --> PedestrianScramble : Button 3 Pressed
+    AutomaticMode --> PedestrianScramble : Pedestrian Button Pressed
     PedestrianScramble --> AutomaticMode : immediately change (after 20 seconds without \n press Button 3, turn off the pedestrian led 
 
     Manual_Mode-->AutomaticMode: Immediately change 
