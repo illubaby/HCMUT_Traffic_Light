@@ -16,10 +16,14 @@ stateDiagram-v2
         Green_State --> Red_State : Button 1 Pressed
     }
     state TuningMode{
+
         Tuning_Red --> Tuning_Yellow : Button 2 Pressed
         Tuning_Yellow --> Tuning_Green : Button 2 Pressed
         Tuning_Green --> Tuning_Red : Button 2 Pressed 
+
     }
+    note right of TuningMode : Button 1 to increase value \n Button 2 to set value
+
     state AutomaticMode {
         [*] --> Red
         Red --> Yellow : Timer
@@ -31,3 +35,4 @@ stateDiagram-v2
         PedestrianGreen --> PedestrianRed : Timer
         PedestrianRed --> PedestrianGreen : Timer
     }
+
