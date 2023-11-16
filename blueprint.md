@@ -22,7 +22,7 @@ stateDiagram-v2
         Tuning_Green --> Tuning_Red : Button 2 Pressed 
 
     }
-    note right of TuningMode : Button 1 to increase value \n Button 2 to set value
+    note right of TuningMode : Button 1 to increase value \n Button 3 to set value
 
     state AutomaticMode {
         [*] --> Red
