@@ -1,5 +1,3 @@
-```mermaid
-
 
 stateDiagram-v2
     AutomaticMode-->Manual_Mode: Button 1 Pressed
@@ -28,7 +26,7 @@ stateDiagram-v2
         Tuning_Green 
 
     }
-    TuningMode-->AutomaticMode: When timer1 = 0
+    TuningMode-->Red: When timer1 = 0
     note right of TuningMode : Button 1 to increase value \n Button 3 to set value
 
     state AutomaticMode {
@@ -42,4 +40,3 @@ stateDiagram-v2
         PedestrianGreen --> PedestrianRed : Timer
         PedestrianRed --> PedestrianGreen : Timer
     }
-
