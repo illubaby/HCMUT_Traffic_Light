@@ -1,4 +1,4 @@
-
+```mermaid
 stateDiagram-v2
     AutomaticMode-->Manual_Mode: Button 1 Pressed
     AutomaticMode --> TuningMode : Button 2 Pressed
