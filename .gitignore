@@ -50,3 +50,22 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+*.log
+.metadata/.lock
+*.xml
+.metadata/.plugins/com.st.stm32cube.ide.mcu.informationcenter/2.0.0.202106220948
+*.pdom
+.metadata/.plugins/org.eclipse.cdt.make.core/specs.c
+.metadata/.plugins/org.eclipse.cdt.make.core/specs.cpp
+.metadata/.plugins/org.eclipse.cdt.managedbuilder.core/spec.c
+.metadata/.plugins/org.eclipse.cdt.managedbuilder.core/spec.cpp
+*.index
+.metadata/.plugins/org.eclipse.core.resources/.projects/Lab3/.location
+*.snap
+*.resources
+*.prefs
+*.xmi
+*.ini
+*.xml
+*.xml
+code tham khao cua hieu/Source code/.settings/language.settings.xml
