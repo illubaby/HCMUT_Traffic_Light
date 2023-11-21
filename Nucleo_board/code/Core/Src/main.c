@@ -19,6 +19,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "test_io.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -105,6 +106,8 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
+
+	  test_IO();
 
     /* USER CODE BEGIN 3 */
   }
