@@ -70,9 +70,15 @@ dkms.conf
 *.xml
 *.xml
 code tham khao cua hieu/Source code/.settings/language.settings.xml
+<<<<<<< HEAD
 *.prefs
 *.mk
 *.mk
 *.list
 =======
 >>>>>>> parent of 4461f41 (Ignore file)
+=======
+>>>>>>> parent of b4e14f2 (add gitignore)
+*.list
+Code/Source code/Debug/makefile
+*.prefs
