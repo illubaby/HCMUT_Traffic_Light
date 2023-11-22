@@ -14,7 +14,7 @@ void turnoff_leds(){
 	HAL_GPIO_WritePin(green1_GPIO_Port, green1_Pin, SET);
 	HAL_GPIO_WritePin(red2_GPIO_Port, red2_Pin, SET);
 	HAL_GPIO_WritePin(yellow2_GPIO_Port, yellow2_Pin, SET);
-	HAL_GPIO_WritePin(green2_GPIO_Port, green2_Pin, SET);
+	//HAL_GPIO_WritePin(green2_GPIO_Port, green2_Pin, SET);
 }
 void button1_check(){
 	if (isButton1Pressed() == 1){
@@ -81,7 +81,7 @@ void blinky_green_led(){
 	if (timer4_flag == 1){
 		setTimer4(50);
 		HAL_GPIO_TogglePin(green1_GPIO_Port, green1_Pin);
-		HAL_GPIO_TogglePin(green2_GPIO_Port, green2_Pin);
+		//HAL_GPIO_TogglePin(green2_GPIO_Port, green2_Pin);
 	}
 }
 

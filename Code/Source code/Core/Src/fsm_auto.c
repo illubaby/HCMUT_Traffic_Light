@@ -229,17 +229,17 @@ void led_turnon(int led, int position){
 		case red_led:
 			HAL_GPIO_WritePin(red2_GPIO_Port, red2_Pin, RESET);
 			HAL_GPIO_WritePin(yellow2_GPIO_Port, yellow2_Pin, SET);
-			HAL_GPIO_WritePin(green2_GPIO_Port, green2_Pin, SET);
+			//HAL_GPIO_WritePin(green2_GPIO_Port, green2_Pin, SET);
 			break;
 		case yellow_led:
 			HAL_GPIO_WritePin(red2_GPIO_Port, red2_Pin, SET);
 			HAL_GPIO_WritePin(yellow2_GPIO_Port, yellow2_Pin, RESET);
-			HAL_GPIO_WritePin(green2_GPIO_Port, green2_Pin, SET);
+			//HAL_GPIO_WritePin(green2_GPIO_Port, green2_Pin, SET);
 			break;
 		case green_led:
 			HAL_GPIO_WritePin(red2_GPIO_Port, red2_Pin, SET);
 			HAL_GPIO_WritePin(yellow2_GPIO_Port, yellow2_Pin, SET);
-			HAL_GPIO_WritePin(green2_GPIO_Port, green2_Pin, RESET);
+			//HAL_GPIO_WritePin(green2_GPIO_Port, green2_Pin, RESET);
 			break;
 		default:break;
 		}
