@@ -64,13 +64,8 @@ all: main-build
 main-build: Capstone.elf secondary-outputs
 
 # Tool invocations
-<<<<<<< HEAD:Code/Source code/Debug/makefile
 Capstone.elf: $(OBJS) $(USER_OBJS) C:\Users\ADMIN\OneDrive\Documents\GitHub\MCU_MPU_Capstone\Code\Source\ code\STM32F103C6UX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	arm-none-eabi-gcc -o "Capstone.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\ADMIN\OneDrive\Documents\GitHub\MCU_MPU_Capstone\Code\Source code\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Capstone.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-=======
-Lab3.elf: $(OBJS) $(USER_OBJS) C:\Users\Minh\ Hieu\OneDrive\Desktop\Lab_VXL\Lab3\Source\ code\STM32F103C6UX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Lab3.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\Minh Hieu\OneDrive\Desktop\Lab_VXL\Lab3\Source code\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab3.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
->>>>>>> parent of b4e14f2 (add gitignore):code tham khao cua hieu/Source code/Debug/makefile
 	@echo 'Finished building target: $@'
 	@echo ' '
 
