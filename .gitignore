@@ -71,3 +71,5 @@ dkms.conf
 Code/Source code/Debug/makefile
 *.prefs
 
+*.pdsbak
+*.workspace
