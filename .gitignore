@@ -50,6 +50,7 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+<<<<<<< HEAD
 *.log
 .metadata/.lock
 *.xml
@@ -73,3 +74,5 @@ code tham khao cua hieu/Source code/.settings/language.settings.xml
 *.mk
 *.mk
 *.list
+=======
+>>>>>>> parent of 4461f41 (Ignore file)
