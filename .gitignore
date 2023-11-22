@@ -69,3 +69,7 @@ dkms.conf
 *.xml
 *.xml
 code tham khao cua hieu/Source code/.settings/language.settings.xml
+*.prefs
+*.mk
+*.mk
+*.list
