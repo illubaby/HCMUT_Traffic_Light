@@ -76,8 +76,6 @@ void Error_Handler(void);
 #define red2_GPIO_Port GPIOA
 #define yellow2_Pin GPIO_PIN_5
 #define yellow2_GPIO_Port GPIOA
-#define Buzzer_Pin GPIO_PIN_6
-#define Buzzer_GPIO_Port GPIOA
 #define en0_Pin GPIO_PIN_7
 #define en0_GPIO_Port GPIOA
 #define a1_Pin GPIO_PIN_0
