@@ -10,6 +10,7 @@
 
 
 #include "global.h"
+#include "main.h"
 
 extern int timer_flag[];
 void setTimer(int duration, int index);

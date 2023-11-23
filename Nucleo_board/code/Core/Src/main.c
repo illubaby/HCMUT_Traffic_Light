@@ -102,7 +102,13 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
+	  fsm_auto();
+	  fsm_manual();
+	  fsm_pedestrian_light();
+	  fsm_buzzer();
 
+
+	  HAL_Delay(10);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -270,8 +276,10 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
-	test_IO();
-	getKeyinput();
+	scanLed(); //scan 3 LED (2 Traffic and 1 Pedestrian)
+	buzzerController(); // buzzer
+	timerRun(); // software timer
+	getKeyinput(); // button
 }
 /* USER CODE END 4 */
 
