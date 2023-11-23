@@ -13,9 +13,7 @@
 #define PRESSED_STATE RESET
 
 
-int isButton1Pressed();
-int isButton2Pressed();
-int isButton3Pressed();
+int isButtonPressed(int index);
 void getKeyinput();
 
 #endif /* INC_BUTTON_H_ */
