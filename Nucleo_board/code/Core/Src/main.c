@@ -108,7 +108,10 @@ int main(void)
     /* USER CODE END WHILE */
 
 	  test_IO();
-
+	  fsm_auto();
+	  fsm_manual();
+	  fsm_pedestrian();
+	  fsm_buzzer();
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
