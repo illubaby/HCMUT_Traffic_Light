@@ -268,19 +268,19 @@ void update_countdown(int mode){
 }
 
 void enablechange(){
-	if (timer2_flag == 1){
+	if (timer_flags[1] == 1){
 		if (enable_trigger == 1) enable_trigger = 0;
 		else if (enable_trigger == 0) enable_trigger = 1;
-		setTimer2(50);
+		setTimer(1,50);
 	}
 }
 
 
 void timechange(int *time1, int *time2){
-	if (timer3_flag == 1){
+	if (timer_flags[2] == 1){
 		*time1 = *time1 - 1;
 		*time2 = *time2 - 1;
-		setTimer3(100);
+		setTimer(2,100);
 	}
 }
 
@@ -317,18 +317,18 @@ void fsm_auto(){
 	case init:
 		status = red_green;
 		update_countdown(red_green);
-		setTimer1(green_time); //time duration for 7segleg
-		setTimer2(50); // time duration for enable trigger
-		setTimer3(100); // time duration for reducing 1 second
+		setTimer(0,green_time); //time duration for 7segleg
+		setTimer(1,50); // time duration for enable trigger
+		setTimer(2,100); // time duration for reducing 1 second
 
 		enable_trigger = 0;
 		break;
 	case red_green:
 		led_turnon(red_led, topbottom);
 		led_turnon(green_led, leftright);
-		if (timer1_flag == 1){
+		if (timer_flags[0] == 1){
 			status = red_yellow;
-			setTimer1(yellow_time);
+			setTimer(0,yellow_time);
 			update_countdown(red_yellow);
 		}
 
@@ -345,9 +345,9 @@ void fsm_auto(){
 	case red_yellow:
 		led_turnon(red_led, topbottom);
 		led_turnon(yellow_led, leftright);
-		if (timer1_flag == 1){
+		if (timer_flags[0] == 1){
 			status = green_red;
-			setTimer1(green_time);
+			setTimer(0,green_time);
 			update_countdown(green_red);
 		}
 
@@ -365,9 +365,9 @@ void fsm_auto(){
 	case green_red:
 		led_turnon(green_led, topbottom);
 		led_turnon(red_led, leftright);
-		if (timer1_flag == 1){
+		if (timer_flags[0] == 1){
 			status = yellow_red;
-			setTimer1(yellow_time);
+			setTimer(0,yellow_time);
 			update_countdown(yellow_red);
 		}
 
@@ -384,9 +384,9 @@ void fsm_auto(){
 	case yellow_red:
 		led_turnon(yellow_led, topbottom);
 		led_turnon(red_led, leftright);
-		if (timer1_flag == 1){
+		if (timer_flags[0] == 1){
 			status = red_green;
-			setTimer1(yellow_time);
+			setTimer(0,yellow_time);
 			update_countdown(red_green);
 		}
 

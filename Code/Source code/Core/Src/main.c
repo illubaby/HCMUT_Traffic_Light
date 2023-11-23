@@ -61,12 +61,12 @@ static void MX_TIM3_Init(void);
 void buzzer(){
 	// the frequence is 1khz
 	// input is the current counter value
-		  for(int i=0;i<100;i=i+5)
-		  {
-		    __HAL_TIM_SetCompare(&htim3,TIM_CHANNEL_1,i);
+////		  for(int i=0;i<100;i=i+5)
+////		  {
+		    __HAL_TIM_SetCompare(&htim3,TIM_CHANNEL_1,10);
 		    HAL_Delay(100);
-		    if (i>=100) i = 0;
-		   }
+////		    if (i>=100) i = 0;
+////		   }
 }
 /* USER CODE END 0 */
 
@@ -113,9 +113,9 @@ HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  buzzer();
-	  //fsm_manual();
-	  //fsm_auto();
+	  //buzzer();
+	  fsm_manual();
+	  fsm_auto();
   }
   /* USER CODE END 3 */
 }

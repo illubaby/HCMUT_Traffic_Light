@@ -8,16 +8,19 @@
 #ifndef INC_SOFTWARE_TIMER_H_
 #define INC_SOFTWARE_TIMER_H_
 
-
 #include "global.h"
 
-extern int timer1_flag;
-extern int timer2_flag;
-extern int timer3_flag;
-extern int timer4_flag;
-void setTimer1(int duration);
-void setTimer2(int duration);
-void setTimer3(int duration);
-void setTimer4(int duration);
+// Define the number of timers
+#define NUM_TIMERS 4
+
+// Declare the arrays for timers' counters and flags
+extern int timer_counters[NUM_TIMERS];
+extern int timer_flags[NUM_TIMERS];
+
+// Declare the function for setting timers
+void setTimer(int timerNumber, int duration);
+
+// Declare the function for running the timers
 void timerRun();
+
 #endif /* INC_SOFTWARE_TIMER_H_ */

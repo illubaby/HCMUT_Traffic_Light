@@ -22,7 +22,7 @@ void button1_check(){
 		tmp_yellow= 1;
 		tmp_green = 1;
 		turnoff_leds();
-		setTimer4(50); // time duration for blinking led (used for blinky led file)
+		setTimer(3,50); // time duration for blinking led (used for blinky led file)
 		if (status == mode_2) status = mode_3;
 		else if (status == mode_3) status = mode_4;
 		else if (status == mode_4) status = init;
@@ -64,22 +64,22 @@ void button3_check(){
 }
 
 void blinky_red_led(){
-	if (timer4_flag == 1){
-		setTimer4(50);
+	if (timer_flags[3] == 1){
+		setTimer(3,50);
 		HAL_GPIO_TogglePin(red1_GPIO_Port, red1_Pin);
 		HAL_GPIO_TogglePin(red2_GPIO_Port, red2_Pin);
 	}
 }
 void blinky_yellow_led(){
-	if (timer4_flag == 1){
-		setTimer4(50);
+	if (timer_flags[3] == 1){
+		setTimer(3,50);
 		HAL_GPIO_TogglePin(yellow1_GPIO_Port, yellow1_Pin);
 		HAL_GPIO_TogglePin(yellow2_GPIO_Port, yellow2_Pin);
 	}
 }
 void blinky_green_led(){
-	if (timer4_flag == 1){
-		setTimer4(50);
+	if (timer_flags[3] == 1){
+		setTimer(3,50);
 		HAL_GPIO_TogglePin(green1_GPIO_Port, green1_Pin);
 		//HAL_GPIO_TogglePin(green2_GPIO_Port, green2_Pin);
 	}
