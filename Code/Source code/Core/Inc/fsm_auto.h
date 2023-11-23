@@ -25,6 +25,7 @@
 extern int enable_trigger;
 void enablechange();
 //temp variable for timer
+extern int red_time;
 extern int tmp_red;
 extern int tmp_yellow;
 extern int tmp_green;

@@ -1,6 +1,5 @@
 #include "software_timer.h"
 
-#define NUM_TIMERS 4
 
 int timer_counters[NUM_TIMERS] = {0};
 int timer_flags[NUM_TIMERS] = {0};

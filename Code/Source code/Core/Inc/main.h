@@ -66,6 +66,8 @@ void Error_Handler(void);
 #define Button2_GPIO_Port GPIOC
 #define Button3_Pin GPIO_PIN_15
 #define Button3_GPIO_Port GPIOC
+#define TEST_Pin GPIO_PIN_0
+#define TEST_GPIO_Port GPIOA
 #define red1_Pin GPIO_PIN_1
 #define red1_GPIO_Port GPIOA
 #define yellow1_Pin GPIO_PIN_2
@@ -113,7 +115,7 @@ void Error_Handler(void);
 #define c2_Pin GPIO_PIN_9
 #define c2_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
-
+extern TIM_HandleTypeDef htim3;
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

@@ -58,16 +58,7 @@ static void MX_TIM3_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-void buzzer(){
-	// the frequence is 1khz
-	// input is the current counter value
-////		  for(int i=0;i<100;i=i+5)
-////		  {
-		    __HAL_TIM_SetCompare(&htim3,TIM_CHANNEL_1,10);
-		    HAL_Delay(100);
-////		    if (i>=100) i = 0;
-////		   }
-}
+
 /* USER CODE END 0 */
 
 /**
@@ -101,19 +92,22 @@ int main(void)
   MX_TIM2_Init();
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
-HAL_TIM_Base_Start_IT(&htim2);
-HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
+  HAL_TIM_Base_Start_IT(&htim2);
+  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-
+  buzzer_counter = red_time/100 ;
+  setTimer(4,100);
   while (1)
   {
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  //buzzer();
+
+	  buzzer();
 	  fsm_manual();
 	  fsm_auto();
   }
@@ -274,9 +268,9 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, red1_Pin|yellow1_Pin|green1_Pin|red2_Pin
-                          |yellow2_Pin|en0_Pin|en1_Pin|en2_Pin
-                          |en3_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, TEST_Pin|red1_Pin|yellow1_Pin|green1_Pin
+                          |red2_Pin|yellow2_Pin|en0_Pin|en1_Pin
+                          |en2_Pin|en3_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, a1_Pin|b1_Pin|c1_Pin|d2_Pin
@@ -290,12 +284,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : red1_Pin yellow1_Pin green1_Pin red2_Pin
-                           yellow2_Pin en0_Pin en1_Pin en2_Pin
-                           en3_Pin */
-  GPIO_InitStruct.Pin = red1_Pin|yellow1_Pin|green1_Pin|red2_Pin
-                          |yellow2_Pin|en0_Pin|en1_Pin|en2_Pin
-                          |en3_Pin;
+  /*Configure GPIO pins : TEST_Pin red1_Pin yellow1_Pin green1_Pin
+                           red2_Pin yellow2_Pin en0_Pin en1_Pin
+                           en2_Pin en3_Pin */
+  GPIO_InitStruct.Pin = TEST_Pin|red1_Pin|yellow1_Pin|green1_Pin
+                          |red2_Pin|yellow2_Pin|en0_Pin|en1_Pin
+                          |en2_Pin|en3_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;

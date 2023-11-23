@@ -9,5 +9,5 @@
 #define INC_BUZZER_H_
 
 void buzzer();
-
+extern int buzzer_counter;
 #endif /* INC_BUZZER_H_ */

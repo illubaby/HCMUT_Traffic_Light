@@ -11,7 +11,7 @@
 #include "global.h"
 
 // Define the number of timers
-#define NUM_TIMERS 4
+#define NUM_TIMERS 5
 
 // Declare the arrays for timers' counters and flags
 extern int timer_counters[NUM_TIMERS];
