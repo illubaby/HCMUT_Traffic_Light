@@ -20,8 +20,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "test_io.h"
-#include "button.h"
-
+#include "global.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 

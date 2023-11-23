@@ -7,7 +7,7 @@
 
 #ifndef INC_BUTTON_H_
 #define INC_BUTTON_H_
-#include "main.h"
+#include "global.h"
 
 #define NORMAL_STATE SET
 #define PRESSED_STATE RESET
