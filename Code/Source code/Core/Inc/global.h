@@ -13,7 +13,7 @@
 #include "button.h"
 #include "main.h"
 #include "software_timer.h"
-
+#include "buzzer.h"
 extern int status;
 
 
