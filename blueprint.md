@@ -1,26 +1,28 @@
 ```mermaid
-
 stateDiagram-v2
     AutomaticMode-->Manual_Mode: Button 1 Pressed
-    Manual_Mode --> TuningMode : Button 2 Pressed
+    %% Manual_Mode --> TuningMode : 
 
-    TuningMode-->Manual_Mode: Button 2 Pressed
+     TuningMode-->Manual_Mode: Button 1 Pressed
     TuningMode -->AutomaticMode: Button 3 pressed
 
     AutomaticMode --> PedestrianScramble : Pedestrian Button Pressed
     PedestrianScramble --> AutomaticMode : immediately change (after 20 seconds without \n press Button 3, turn off the pedestrian led 
 
-    Manual_Mode-->AutomaticMode: Immediately change 
+    Manual_Mode-->AutomaticMode: After a ... time
     state Manual_Mode{
         Red_State --> Yellow_State : Button 1 Pressed
         Yellow_State --> Green_State : Button 1 Pressed
         Green_State --> Red_State : Button 1 Pressed
+        Red_State --> Tuning_Red : Button 2 Pressed
+        Yellow_State --> Tuning_Yellow : Button 2 Pressed
+        Green_State --> Tuning_Green : Button 2 Pressed
     }
     state TuningMode{
 
-        Tuning_Red --> Tuning_Yellow : Button 2 Pressed
-        Tuning_Yellow --> Tuning_Green : Button 2 Pressed
-        Tuning_Green --> Tuning_Red : Button 2 Pressed 
+        Tuning_Red  : 
+        Tuning_Yellow  : 
+        Tuning_Green  : 
 
     }
     note right of TuningMode : Button 2 to increase value \n 
