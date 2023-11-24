@@ -2,9 +2,10 @@
 
 stateDiagram-v2
     AutomaticMode-->Manual_Mode: Button 1 Pressed
-    AutomaticMode --> TuningMode : Button 2 Pressed
+    Manual_Mode --> TuningMode : Button 2 Pressed
 
-    TuningMode-->AutomaticMode: Button 2 Pressed
+    TuningMode-->Manual_Mode: Button 2 Pressed
+    TuningMode -->AutomaticMode: Button 3 pressed
 
     AutomaticMode --> PedestrianScramble : Pedestrian Button Pressed
     PedestrianScramble --> AutomaticMode : immediately change (after 20 seconds without \n press Button 3, turn off the pedestrian led 
@@ -22,7 +23,7 @@ stateDiagram-v2
         Tuning_Green --> Tuning_Red : Button 2 Pressed 
 
     }
-    note right of TuningMode : Button 1 to increase value \n Button 3 to set value
+    note right of TuningMode : Button 2 to increase value \n 
 
     state AutomaticMode {
         [*] --> Red
