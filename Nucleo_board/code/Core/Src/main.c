@@ -98,10 +98,11 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+
   while (1)
   {
     /* USER CODE END WHILE */
-//	  fsm_auto();
+	  fsm_auto();
 //	  fsm_manual();
 //	  fsm_pedestrian_light();
 //	  fsm_buzzer();

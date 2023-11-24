@@ -29,4 +29,8 @@
 #define MANUAL_YELLOW 21
 #define MANUAL_GREEN 22
 
-extern int status;
+//declare some global variables
+extern int status;// show status
+extern int red_time; //show red time length
+extern int yellow_time; // show yellow time length
+extern int green_timer; // show green time length
