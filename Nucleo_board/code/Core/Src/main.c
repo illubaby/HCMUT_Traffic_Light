@@ -19,7 +19,6 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "test_io.h"
 #include "global.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -102,13 +101,13 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  fsm_auto();
-	  fsm_manual();
-	  fsm_pedestrian_light();
-	  fsm_buzzer();
-
-
-	  HAL_Delay(10);
+//	  fsm_auto();
+//	  fsm_manual();
+//	  fsm_pedestrian_light();
+//	  fsm_buzzer();
+//
+//
+//	  HAL_Delay(10);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -277,7 +276,7 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	scanLed(); //scan 3 LED (2 Traffic and 1 Pedestrian)
-	buzzerController(); // buzzer
+//	buzzerController(); // buzzer
 	timerRun(); // software timer
 	getKeyinput(); // button
 }
