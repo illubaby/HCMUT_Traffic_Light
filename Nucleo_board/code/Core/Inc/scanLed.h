@@ -11,7 +11,7 @@
 #include "global.h"
 
 void scanLed();
-
-
+void onGreenPed();
+void onRedPed();
 #endif /* INC_SCANLED_H_ */
 

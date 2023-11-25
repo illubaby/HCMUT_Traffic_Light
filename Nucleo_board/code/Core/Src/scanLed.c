@@ -42,7 +42,14 @@ void onGreen_2(){
 	HAL_GPIO_WritePin(TL2B_GPIO_Port, TL2B_Pin, RESET);
 }
 
-
+void onGreenPed(){
+	HAL_GPIO_WritePin(PLA_GPIO_Port, PLA_Pin, SET);
+	HAL_GPIO_WritePin(PLB_GPIO_Port, PLB_Pin, RESET);
+}
+void onRedPed(){
+	HAL_GPIO_WritePin(PLA_GPIO_Port, PLA_Pin, RESET);
+	HAL_GPIO_WritePin(PLB_GPIO_Port, PLB_Pin, SET);
+}
 void scanLed(){
 	turnoffAll();
 	switch (status){
