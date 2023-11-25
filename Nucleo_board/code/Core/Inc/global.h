@@ -13,6 +13,7 @@
 #include "button.h"
 #include "scanLed.h"
 #include "fsm_auto.h"
+#include "fsm_pedestrian_light.h"
 
 #endif /* INC_GLOBAL_H_ */
 
