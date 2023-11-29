@@ -9,7 +9,7 @@
 #define INC_SCANLED_H_
 
 #include "global.h"
-
+#include "main.h"
 void scanLed();
 void onGreenPed();
 void onRedPed();

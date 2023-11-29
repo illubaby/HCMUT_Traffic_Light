@@ -103,7 +103,7 @@ int main(void)
   {
     /* USER CODE END WHILE */
 	  fsm_auto();
-//	  fsm_manual();
+	  fsm_manual();
 	  fsm_pedestrian_light();
 //	  fsm_buzzer();
 //

@@ -12,7 +12,7 @@ int status = INIT;
 int red_time = 5;
 int yellow_time = 2;
 int green_time = 3;
-int red_time_tmp = 0 ; // temp variable for red
+int red_time_tmp = 0 ; // temp variable for red time length
 int yellow_time_tmp = 0 ;
 int green_time_tmp = 0 ;
 

@@ -13,6 +13,7 @@
 #include "button.h"
 #include "scanLed.h"
 #include "fsm_auto.h"
+#include "fsm_manual.h"
 #include "fsm_pedestrian_light.h"
 
 #endif /* INC_GLOBAL_H_ */
@@ -34,4 +35,4 @@
 extern int status;// show status
 extern int red_time; //show red time length
 extern int yellow_time; // show yellow time length
-extern int green_timer; // show green time length
+extern int green_time; // show green time length
