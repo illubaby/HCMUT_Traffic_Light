@@ -63,9 +63,9 @@ void checkButton3(){
 
 
 void fsm_manual(){
-	red_time_tmp = red_time;
-	yellow_time_tmp= yellow_time;
-	green_time_tmp = green_time;
+	red_time_tmp = 0;
+	yellow_time_tmp= 0;
+	green_time_tmp = 0;
 	checkButton1();
 	switch (status){
 	case MANUAL_RED:
