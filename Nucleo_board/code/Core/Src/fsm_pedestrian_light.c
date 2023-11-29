@@ -8,10 +8,10 @@
 #include "fsm_pedestrian_light.h"
 
 void fsm_pedestrian_light(){
-	if(isButtonPressed(3)){
-		setTimer(1000,1);
+	if(isButtonPressed(4)){
+		setTimer(1000,4);
 	}
-	if(timer_flag == 0){
+	if(timer_flag[4] == 0){
 		switch (status){
 			case AUTO_RED_GREEN:
 				onRedPed();
@@ -27,5 +27,5 @@ void fsm_pedestrian_light(){
 		}
 	}
 
-}
 
+}

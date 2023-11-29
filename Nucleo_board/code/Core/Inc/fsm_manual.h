@@ -10,5 +10,6 @@
 #include "global.h"
 
 void fsm_manual();
+void resetTimetmp ();
 
 #endif /* INC_FSM_MANUAL_H_ */

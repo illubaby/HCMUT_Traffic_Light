@@ -73,18 +73,30 @@ void scanLed(){
 	case AUTO_RED_GREEN:
 		onRed_1();
 		onGreen_2();
+		if(timer_flag[4] == 0){
+			onGreenPed();
+		}
 		break;
 	case AUTO_RED_YELLOW:
 		onRed_1();
 		onYellow_2();
+		if(timer_flag[4] == 0){
+			onGreenPed();
+		}
 		break;
 	case AUTO_GREEN_RED:
 		onGreen_1();
 		onRed_2();
+		if(timer_flag[4] == 0){
+			onRedPed();
+		}
 		break;
 	case AUTO_YELLOW_RED:
 		onYellow_1();
 		onRed_2();
+		if(timer_flag[4] == 0){
+			onRedPed();
+		}
 		break;
 	case MANUAL_RED:
 		if (timer_flag[3] == 1){

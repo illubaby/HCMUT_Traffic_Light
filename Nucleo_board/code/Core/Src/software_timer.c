@@ -5,7 +5,8 @@
  *      Author: Minh Hieu
  */
 
-//used timer: 0 (Hieu), 1 (Tuan Anh), 2,3 (Hieu)
+//used timer: Hieu:0, 1 , 2,3
+//Tanh:4
 #include "software_timer.h"
 
 
