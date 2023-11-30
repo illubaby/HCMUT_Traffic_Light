@@ -77,3 +77,4 @@ Code/Source code/Debug/makefile
 *.bin
 *.bin
 Code/Source code/Debug/Capstone.bin
+*.mk
