@@ -20,6 +20,8 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "global.h"
+#include "test_io.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -102,13 +104,15 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  fsm_auto();
-	  fsm_manual();
-	  fsm_pedestrian_light();
-//	  fsm_buzzer();
-//
-//
-//	  HAL_Delay(10);
+	  //test_IO();
+	  	  fsm_auto();
+	  	  //fsm_manual();
+	  	  //fsm_pedestrian_light();
+	  //	  fsm_buzzer();
+	  //
+	  //
+	  //	  HAL_Delay(10);
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -170,7 +174,7 @@ static void MX_TIM2_Init(void)
   htim2.Instance = TIM2;
   htim2.Init.Prescaler = 9999;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim2.Init.Period = 63;
+  htim2.Init.Period = 7;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim2) != HAL_OK)

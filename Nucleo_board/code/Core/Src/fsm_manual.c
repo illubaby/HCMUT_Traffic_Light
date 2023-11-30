@@ -27,11 +27,13 @@ void resetTimetmp (){
 	green_time_tmp = 0;
 }
 void checkButton1(){
-	if(reset_tmp_flag ==0){
-		resetTimetmp();
-		reset_tmp_flag =1;
-	}						//reset set timer
+
 	if (isButtonPressed(0) == 1){
+		//reset set timer
+		if(reset_tmp_flag ==0){
+			resetTimetmp();
+			reset_tmp_flag =1;
+		}
 		if (status == MANUAL_RED) {
 			setTimer(50, 3); //timer_flag for blinking led
 			status = MANUAL_YELLOW;
