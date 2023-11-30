@@ -6,10 +6,12 @@
  */
 
 
-#include "main.h"
+#include "test_io.h"
 void test_IO(){
-	HAL_GPIO_WritePin(TL2A_GPIO_Port, TL2A_Pin,
-				HAL_GPIO_ReadPin(Button1_GPIO_Port, Button1_Pin));
-	HAL_GPIO_WritePin(TL2B_GPIO_Port, TL2B_Pin,
-				HAL_GPIO_ReadPin(Button2_GPIO_Port, Button2_Pin));
+	if (isButtonPressed(1)){
+		onRedPed();
+	}
+	else if (isButtonPressed(2)){
+		onGreenPed();
+	}
 }

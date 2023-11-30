@@ -8,7 +8,6 @@
 
 
 int red_time_tmp, yellow_time_tmp, green_time_tmp;
-int reset_tmp_flag =0;
 
 void turnbackINIT(){
 	if (red_time == 1 || yellow_time == 1 ||
@@ -21,27 +20,23 @@ void turnbackINIT(){
 	red_time = green_time + yellow_time;
 	status = INIT;
 }
-void resetTimetmp (){
-	red_time_tmp = 0;
-	yellow_time_tmp= 0;
-	green_time_tmp = 0;
-}
 void checkButton1(){
-
 	if (isButtonPressed(0) == 1){
 		//reset set timer
-		if(reset_tmp_flag ==0){
-			resetTimetmp();
-			reset_tmp_flag =1;
-		}
+
 		if (status == MANUAL_RED) {
-			setTimer(50, 3); //timer_flag for blinking led
 			status = MANUAL_YELLOW;
 		}
 		else if (status == MANUAL_YELLOW) status = MANUAL_GREEN;
 		else if (status == MANUAL_GREEN) turnbackINIT();
-		else status = MANUAL_RED; //auto state -> manual state
-		setTimer(1000, 2);// after 5 sec don't press button1 -> turn back to auto mode
+		else {
+			red_time_tmp = 0;
+			yellow_time_tmp= 0;
+			green_time_tmp = 0;
+			status = MANUAL_RED; //auto state -> manual state
+			setTimer(50, 3);
+		}
+		setTimer(1000, 2);// after 10 sec don't press button1 -> turn back to auto mode
 	}
 }
 
@@ -73,7 +68,6 @@ void checkButton3(){
 			green_time = green_time_tmp;
 		}
 		//when confirm the time, flag =0 to reset timer again
-		reset_tmp_flag = 0;
 	}
 }
 
@@ -84,7 +78,6 @@ void fsm_manual(){
 	case MANUAL_RED:
 		if (timer_flag [2] == 1) {
 			turnbackINIT();
-			reset_tmp_flag = 0;
 		}
 		checkButton2();
 		checkButton3();
@@ -92,7 +85,6 @@ void fsm_manual(){
 	case MANUAL_YELLOW:
 		if (timer_flag [2] == 1){
 			turnbackINIT();
-			reset_tmp_flag = 0;
 		}
 		checkButton2();
 		checkButton3();
@@ -100,7 +92,6 @@ void fsm_manual(){
 	case MANUAL_GREEN:
 		if (timer_flag [2] == 1){
 			turnbackINIT();
-			reset_tmp_flag = 0;
 		}
 		checkButton2();
 		checkButton3();
