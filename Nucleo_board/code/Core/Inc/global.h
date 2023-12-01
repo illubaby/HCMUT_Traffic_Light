@@ -15,6 +15,9 @@
 #include "fsm_auto.h"
 #include "fsm_manual.h"
 #include "fsm_pedestrian_light.h"
+#include "scheduler.h"
+#include "buzzer.h"
+
 
 #endif /* INC_GLOBAL_H_ */
 
