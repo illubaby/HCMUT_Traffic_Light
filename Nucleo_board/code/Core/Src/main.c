@@ -21,7 +21,7 @@
 #include "main.h"
 #include "global.h"
 #include "test_io.h"
-
+#include "buzzer.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -112,7 +112,7 @@ int main(void)
   	  	  fsm_auto();
   	  	  fsm_manual();
   	  	  fsm_pedestrian_light();
-  	  //	  fsm_buzzer();
+  	  	  buzzer();
 		  //
 		  //
   	  //	  HAL_Delay(10);

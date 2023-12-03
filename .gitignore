@@ -52,3 +52,8 @@ Mkfile.old
 dkms.conf
 *.pdsbak
 *.workspace
+*.mk
+Nucleo_board/code/Debug/makefile
+*.list
+*.asm
+*.bin
