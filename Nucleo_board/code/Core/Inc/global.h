@@ -33,7 +33,7 @@
 #define MANUAL_RED 20
 #define MANUAL_YELLOW 21
 #define MANUAL_GREEN 22
-
+#define MANUAL_INIT 23
 //declare some global variables
 extern int status;// show status
 extern int red_time; //show red time length

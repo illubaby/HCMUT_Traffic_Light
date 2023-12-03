@@ -7,7 +7,7 @@
 
 #include "scanLed.h"
 
-
+int enable_change = 0;
 //lenh bat tat den cho nhanh
 void turnoffAll(){
 	HAL_GPIO_WritePin(TL1A_GPIO_Port, TL1A_Pin, SET);
@@ -51,22 +51,37 @@ void onRedPed(){
 	HAL_GPIO_WritePin(PLB_GPIO_Port, PLB_Pin, RESET);
 }
 void onRed_Toggle(){
-	HAL_GPIO_TogglePin(TL1A_GPIO_Port, TL1A_Pin);
-	HAL_GPIO_WritePin(TL1B_GPIO_Port, TL1B_Pin, SET);
-	HAL_GPIO_TogglePin(TL2A_GPIO_Port, TL2A_Pin);
-	HAL_GPIO_WritePin(TL2B_GPIO_Port, TL2B_Pin, SET);
+	if (enable_change == 0){
+		onRed_1();
+		onRed_2();
+		enable_change = 1;
+	}
+	else if (enable_change == 1){
+		turnoffAll();
+		enable_change = 0;
+	}
 }
 void onGreen_Toggle(){
-	HAL_GPIO_TogglePin(TL1B_GPIO_Port, TL1B_Pin);
-	HAL_GPIO_WritePin(TL1A_GPIO_Port, TL1A_Pin, SET);
-	HAL_GPIO_TogglePin(TL2B_GPIO_Port, TL2B_Pin);
-	HAL_GPIO_WritePin(TL2A_GPIO_Port, TL2A_Pin, SET);
+	if (enable_change == 0){
+		onGreen_1();
+		onGreen_2();
+		enable_change = 1;
+	}
+	else if (enable_change == 1){
+		turnoffAll();
+		enable_change = 0;
+	}
 }
 void onYellow_Toggle(){
-	HAL_GPIO_TogglePin(TL1A_GPIO_Port, TL1A_Pin);
-	HAL_GPIO_TogglePin(TL1B_GPIO_Port, TL1B_Pin);
-	HAL_GPIO_TogglePin(TL2A_GPIO_Port, TL2A_Pin);
-	HAL_GPIO_TogglePin(TL2B_GPIO_Port, TL2B_Pin);
+	if (enable_change == 0){
+		onYellow_1();
+		onYellow_2();
+		enable_change = 1;
+	}
+	else if (enable_change == 1){
+		turnoffAll();
+		enable_change = 0;
+	}
 }
 void scanLed(){
 	switch (status){
@@ -100,8 +115,7 @@ void scanLed(){
 		break;
 	case MANUAL_RED:
 		if (timer_flag[3] == 1){
-			onRed_1();
-			onRed_2();
+			onRed_Toggle();
 			setTimer(50,3);
 		}
 		break;
