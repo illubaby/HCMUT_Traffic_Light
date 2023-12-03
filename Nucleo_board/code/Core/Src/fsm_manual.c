@@ -34,7 +34,7 @@ void checkButton1(){
 			turnbackINIT();
 		}
 		else {
-			status = MANUAL_RED; //auto state -> manual state
+			status = MANUAL_INIT; //auto state -> manual state
 		}
 		setTimer(1000, 2);// after 10 sec don't press button1 -> turn back to auto mode
 	}
@@ -44,15 +44,12 @@ void checkButton2(){
 	if (isButtonPressed(1) == 1){
 		if (status == MANUAL_RED){
 			if (red_time_tmp < 99) red_time_tmp++;
-			if (red_time_tmp == 100)red_time_tmp =1;
 		}
 		if (status == MANUAL_YELLOW){
 			if (yellow_time_tmp < 99) yellow_time_tmp++;
-			if (yellow_time_tmp == 100)yellow_time_tmp =1;
 		}
 		if (status == MANUAL_GREEN){
 			if (green_time_tmp < 99) green_time_tmp++;
-			if (green_time_tmp == 100)green_time_tmp =1;
 		}
 	}
 }
