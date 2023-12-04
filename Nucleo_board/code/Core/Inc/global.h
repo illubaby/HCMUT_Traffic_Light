@@ -39,3 +39,7 @@ extern int status;// show status
 extern int red_time; //show red time length
 extern int yellow_time; // show yellow time length
 extern int green_time; // show green time length
+
+extern int red_time_cd; // thoi gian den do cooldown
+extern int yellow_time_cd; // thoi gian den vang cooldown
+extern int green_time_cd; // thoi gian den xanh cooldown
