@@ -111,8 +111,8 @@ int main(void)
   	  //test_IO();
   	  	  fsm_auto();
   	  	  fsm_manual();
-  	  	  fsm_pedestrian_light();
-  	  	  buzzer();
+//  	  	  fsm_pedestrian_light();
+//  	  	  buzzer();
 		  //
 		  //
   	  //	  HAL_Delay(10);

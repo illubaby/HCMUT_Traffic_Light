@@ -36,7 +36,7 @@ void checkButton1(){
 		else {
 			status = MANUAL_INIT; //auto state -> manual state
 		}
-		setTimer(1000, 2);// after 10 sec don't press button1 -> turn back to auto mode
+		setTimer(10000, 2);// after 10 sec don't press button1 -> turn back to auto mode
 	}
 }
 
