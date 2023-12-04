@@ -100,6 +100,8 @@ int main(void)
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim2);
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
+  setTimer(10, 7);
+  buzzer_counter = red_time;
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -116,10 +118,7 @@ int main(void)
   	  	  fsm_manual();
   	  	  fsm_pedestrian_light();
 //  	  	 SCH_Dispatch_Tasks();
-//  	  	  buzzer();
-		  //
-		  //
-  	  //	  HAL_Delay(10);
+
 
       /* USER CODE BEGIN 3 */
     }
@@ -351,6 +350,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	buzzer(); // buzzer
 	timerRun(); // software timer
 	getKeyinput(); // button
+
 //	SCH_Update();
 }
 /* USER CODE END 4 */

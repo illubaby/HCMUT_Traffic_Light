@@ -10,5 +10,5 @@
 
 #include "global.h"
 void buzzer();
-
+extern int buzzer_counter;
 #endif /* INC_BUZZER_H_ */
