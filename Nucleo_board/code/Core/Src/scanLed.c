@@ -41,6 +41,10 @@ void onGreen_2(){
 	HAL_GPIO_WritePin(TL2A_GPIO_Port, TL2A_Pin, RESET);
 	HAL_GPIO_WritePin(TL2B_GPIO_Port, TL2B_Pin, SET);
 }
+void offPed(){
+	HAL_GPIO_WritePin(PLA_GPIO_Port, PLA_Pin, RESET);
+	HAL_GPIO_WritePin(PLB_GPIO_Port, PLB_Pin, RESET);
+}
 
 void onGreenPed(){
 	HAL_GPIO_WritePin(PLA_GPIO_Port, PLA_Pin, RESET);
@@ -114,18 +118,21 @@ void scanLed(){
 		}
 		break;
 	case MANUAL_RED:
+		offPed();
 		if (timer_flag[3] == 1){
 			onRed_Toggle();
 			setTimer(50,3);
 		}
 		break;
 	case MANUAL_YELLOW:
+		offPed();
 		if (timer_flag[3] == 1){
 			onYellow_Toggle();
 			setTimer(50,3);
 		}
 		break;
 	case MANUAL_GREEN:
+		offPed();
 		if (timer_flag[3] == 1){
 			onGreen_Toggle();
 			setTimer(50,3);

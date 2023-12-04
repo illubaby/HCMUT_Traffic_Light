@@ -104,14 +104,18 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-
+  //  SCH_Init();
+  //  SCH_Add_Task(fsm_auto, 0, 1);
+  //  SCH_Add_Task(fsm_manual, 0, 1);
+  //  SCH_Add_Task(fsm_pedestrian_light, 0, 1);
   while (1)
     {
       /* USER CODE END WHILE */
   	  //test_IO();
   	  	  fsm_auto();
   	  	  fsm_manual();
-//  	  	  fsm_pedestrian_light();
+  	  	  fsm_pedestrian_light();
+//  	  	 SCH_Dispatch_Tasks();
 //  	  	  buzzer();
 		  //
 		  //
@@ -347,6 +351,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	buzzer(); // buzzer
 	timerRun(); // software timer
 	getKeyinput(); // button
+//	SCH_Update();
 }
 /* USER CODE END 4 */
 

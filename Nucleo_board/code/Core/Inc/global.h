@@ -18,7 +18,8 @@
 #include "scheduler.h"
 #include "buzzer.h"
 
-
+#include <stdio.h>
+#include <string.h>
 #endif /* INC_GLOBAL_H_ */
 
 

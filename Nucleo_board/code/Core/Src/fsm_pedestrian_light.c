@@ -8,7 +8,7 @@
 #include "fsm_pedestrian_light.h"
 
 void fsm_pedestrian_light(){
-	if(isButtonPressed(4)){
-		setTimer(1000,4);
+	if(isButtonPressed(3)){
+		setTimer(1500,4);
 	}
 }
