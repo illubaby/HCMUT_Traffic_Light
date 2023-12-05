@@ -1,37 +1,30 @@
 /*
- * scheduler.h
+ * app_scheduler.h
  *
- *  Created on: Nov 30, 2023
- *      Author: Admin
+ *  Created on: Nov 27, 2019
+ *      Author: VAIO
  */
 
-#ifndef INC_SCHEDULER_H_
-#define INC_SCHEDULER_H_
+#ifndef APP_SCHEDULER_H_
+#define APP_SCHEDULER_H_
 
-#include "global.h"
-#include <stdint.h>
+#include "stdint.h"
 
-#define SCH_MAX_TASKS 6
-#define NO_TASK_ID 0
 
-typedef struct {
-	// Pointer to the task (must be a ’ void ( void ) ’ function )
-	void (*pTask)(void);
-	// Delay (ticks) until the function will (next) be run
-	uint32_t Delay;
-	// Interval (ticks) between subsequent runs.
-	uint32_t Period;
-	// Incremented (by scheduler) when task is due to execute
-	uint8_t RunMe;
-	//This is a hint to solve the question below .
-	uint32_t TaskID;
-} sTask;
+#define SCH_MAX_TASKS 			10
+#define	NO_TASK_ID				0
 
-unsigned char SCH_Add_Task(void(*pFunction)(), unsigned int DELAY, unsigned int PERIOD);
-void SCH_Dispatch_Tasks(void);
-unsigned char SCH_Delete_Task(const unsigned char TASK_INDEX);
-void SCH_Init(void);
-void SCH_Update(void);
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-extern sTask SCH_tasks_G[SCH_MAX_TASKS];
-#endif /* INC_SCHEDULER_H_ */
+    void SCH_Init(void);
+    void SCH_Update(void);
+    uint32_t SCH_Add_Task(void (*p_function)(), uint32_t DELAY, uint32_t PERIOD);
+    void SCH_Dispatch_Tasks(void);
+    uint8_t SCH_Delete_Task(uint32_t TASK_ID);
+
+#ifdef __cplusplus
+}
+#endif
+#endif /* APP_SCHEDULER_H_ */
