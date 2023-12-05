@@ -360,8 +360,12 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	buzzer(); // buzzer
 	timerRun(); // software timer
 	getKeyinput(); // button
+	print_statement();
 
 //	SCH_Update();
+}
+void HAL_UART_RxCpltCallback ( UART_HandleTypeDef * huart ) {
+
 }
 /* USER CODE END 4 */
 

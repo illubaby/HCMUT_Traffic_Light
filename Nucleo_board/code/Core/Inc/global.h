@@ -17,6 +17,7 @@
 #include "fsm_pedestrian_light.h"
 #include "scheduler.h"
 #include "buzzer.h"
+#include "uart.h"
 
 #include <stdio.h>
 #include <string.h>
