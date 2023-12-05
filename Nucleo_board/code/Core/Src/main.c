@@ -22,10 +22,12 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "scheduler.h"
 #include "buzzer.h"
 #include "global.h"
 #include "fsm_auto.h"
 #include "fsm_manual.h"
+#include "task.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -101,13 +103,14 @@ int main(void)
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim2);
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
-  setTimer(10, 7);
-  setTimer(10, 6);
+  setTimer(10, 7);// for the PWM detail
+  setTimer(10, 6);// for the buzzer counter
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  //  SCH_Init();
+  SCH_Add_Task(task1, 0, 1);// task buzzer
   //  SCH_Add_Task(fsm_auto, 0, 1);
   //  SCH_Add_Task(fsm_manual, 0, 1);
   //  SCH_Add_Task(fsm_pedestrian_light, 0, 1);
@@ -116,10 +119,10 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  fsm_auto();
-	  fsm_manual();
-	  fsm_pedestrian_light();
-
+//	  fsm_auto();
+//	  fsm_manual();
+//	  fsm_pedestrian_light();
+	  SCH_Dispatch_Tasks();
     }
   /* USER CODE END 3 */
 }
@@ -357,12 +360,10 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	scanLed(); //scan 3 LED (2 Traffic and 1 Pedestrian)
-	buzzer(); // buzzer
 	timerRun(); // software timer
 	getKeyinput(); // button
 	print_statement();
-
-//	SCH_Update();
+	SCH_Update();
 }
 void HAL_UART_RxCpltCallback ( UART_HandleTypeDef * huart ) {
 
