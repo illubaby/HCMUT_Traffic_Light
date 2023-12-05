@@ -7,8 +7,11 @@
 
 #ifndef INC_BUZZER_H_
 #define INC_BUZZER_H_
-
+#define ON 1
+#define OFF 2
 #include "global.h"
 void buzzer();
 extern int buzzer_counter;
+extern int state_buzzer;
+
 #endif /* INC_BUZZER_H_ */
