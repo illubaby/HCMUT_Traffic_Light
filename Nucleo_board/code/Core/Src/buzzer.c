@@ -10,7 +10,7 @@
 #include "main.h"
 extern TIM_HandleTypeDef htim3;  // External declaration
 int buzzer_counter;
-int state_buzzer = 1;
+int state_buzzer = 1	;
 int scale_buzzer=0;
 float cycle;
 void get_buzzer_counter(){	// for take the value of the red time

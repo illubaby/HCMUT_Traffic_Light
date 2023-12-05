@@ -94,8 +94,10 @@ void scanLed(){
 		onGreen_2();
 		if(timer_flag[4] == 0){
 			onGreenPed();
+			state_buzzer =ON;//buzzer
 		}else if(timer_flag[4] == 1){
 			offPed();
+			state_buzzer =OFF;//buzzer
 		}
 		break;
 	case AUTO_RED_YELLOW:
@@ -103,16 +105,20 @@ void scanLed(){
 		onYellow_2();
 		if(timer_flag[4] == 0){
 			onGreenPed();
+			state_buzzer =ON;//buzzer
 		}else if(timer_flag[4] == 1){
 			offPed();
+			state_buzzer =OFF;//buzzer
 		}
 		break;
 	case AUTO_GREEN_RED:
 		onGreen_1();
 		onRed_2();
 		if(timer_flag[4] == 0){
+			state_buzzer =ON;//buzzer
 			onRedPed();
 		}else if(timer_flag[4] == 1){
+			state_buzzer =OFF;//buzzer
 			offPed();
 		}
 		break;
@@ -120,13 +126,16 @@ void scanLed(){
 		onYellow_1();
 		onRed_2();
 		if(timer_flag[4] == 0){
+			state_buzzer =ON;//buzzer
 			onRedPed();
 		}else if(timer_flag[4] == 1){
+			state_buzzer =OFF;//buzzer
 			offPed();
 		}
 		break;
 	case MANUAL_RED:
 		offPed();
+		state_buzzer =OFF;//buzzer
 		if (timer_flag[3] == 1){
 			onRed_Toggle();
 			setTimer(50,3);
@@ -134,6 +143,7 @@ void scanLed(){
 		break;
 	case MANUAL_YELLOW:
 		offPed();
+		state_buzzer =OFF;//buzzer
 		if (timer_flag[3] == 1){
 			onYellow_Toggle();
 			setTimer(50,3);
@@ -141,6 +151,7 @@ void scanLed(){
 		break;
 	case MANUAL_GREEN:
 		offPed();
+		state_buzzer =OFF; //buzzer
 		if (timer_flag[3] == 1){
 			onGreen_Toggle();
 			setTimer(50,3);
