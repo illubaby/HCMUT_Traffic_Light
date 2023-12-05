@@ -94,6 +94,8 @@ void scanLed(){
 		onGreen_2();
 		if(timer_flag[4] == 0){
 			onGreenPed();
+		}else if(timer_flag[4] == 1){
+			offPed();
 		}
 		break;
 	case AUTO_RED_YELLOW:
@@ -101,6 +103,8 @@ void scanLed(){
 		onYellow_2();
 		if(timer_flag[4] == 0){
 			onGreenPed();
+		}else if(timer_flag[4] == 1){
+			offPed();
 		}
 		break;
 	case AUTO_GREEN_RED:
@@ -108,6 +112,8 @@ void scanLed(){
 		onRed_2();
 		if(timer_flag[4] == 0){
 			onRedPed();
+		}else if(timer_flag[4] == 1){
+			offPed();
 		}
 		break;
 	case AUTO_YELLOW_RED:
@@ -115,6 +121,8 @@ void scanLed(){
 		onRed_2();
 		if(timer_flag[4] == 0){
 			onRedPed();
+		}else if(timer_flag[4] == 1){
+			offPed();
 		}
 		break;
 	case MANUAL_RED:

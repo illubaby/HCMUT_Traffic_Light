@@ -11,7 +11,7 @@
 
 
 int timer_counter[10] ={ 0, 0, 0, 0, 0 ,0, 0, 0, 0, 0};
-int timer_flag [10] ={ 0, 0, 0, 0, 0 ,0, 0, 0, 0, 0};
+int timer_flag [10] ={ 0, 0, 0, 0, 1 ,0, 0, 0, 0, 0};
 
 void setTimer(int duration, int index){
 	timer_counter[index] = duration;
