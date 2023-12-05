@@ -58,3 +58,5 @@ Nucleo_board/code/Debug/makefile
 *.asm
 *.bin
 *.xml
+*.bin
+*.list
