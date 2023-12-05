@@ -19,12 +19,13 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "global.h"
-#include "test_io.h"
-#include "buzzer.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "buzzer.h"
+#include "global.h"
+#include "fsm_auto.h"
+#include "fsm_manual.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -112,15 +113,12 @@ int main(void)
   //  SCH_Add_Task(fsm_pedestrian_light, 0, 1);
   while (1)
     {
-      /* USER CODE END WHILE */
-  	  //test_IO();
-  	  	  fsm_auto();
-  	  	  fsm_manual();
-  	  	  fsm_pedestrian_light();
-//  	  	 SCH_Dispatch_Tasks();
+    /* USER CODE END WHILE */
 
-
-      /* USER CODE BEGIN 3 */
+    /* USER CODE BEGIN 3 */
+	  fsm_auto();
+	  fsm_manual();
+	  fsm_pedestrian_light();
     }
   /* USER CODE END 3 */
 }
@@ -309,9 +307,13 @@ static void MX_GPIO_Init(void)
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
+  __HAL_RCC_GPIOC_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, PLA_Pin|TL1B_Pin|TL2B_Pin|TL2A_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(TEST_GPIO_Port, TEST_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOA, PLB_Pin|TL1A_Pin, GPIO_PIN_RESET);
@@ -334,6 +336,13 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : TEST_Pin */
+  GPIO_InitStruct.Pin = TEST_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(TEST_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PLB_Pin TL1A_Pin */
   GPIO_InitStruct.Pin = PLB_Pin|TL1A_Pin;

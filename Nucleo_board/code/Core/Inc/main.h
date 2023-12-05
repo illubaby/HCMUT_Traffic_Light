@@ -72,6 +72,8 @@ void Error_Handler(void);
 #define Button3_GPIO_Port GPIOB
 #define PLA_Pin GPIO_PIN_10
 #define PLA_GPIO_Port GPIOB
+#define TEST_Pin GPIO_PIN_9
+#define TEST_GPIO_Port GPIOC
 #define PLB_Pin GPIO_PIN_8
 #define PLB_GPIO_Port GPIOA
 #define TL1A_Pin GPIO_PIN_10
@@ -82,8 +84,6 @@ void Error_Handler(void);
 #define TL2B_GPIO_Port GPIOB
 #define TL2A_Pin GPIO_PIN_5
 #define TL2A_GPIO_Port GPIOB
-
-extern TIM_HandleTypeDef htim3;
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
