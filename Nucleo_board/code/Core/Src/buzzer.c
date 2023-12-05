@@ -14,7 +14,7 @@ int state_buzzer = 1;
 float scale_buzzer=0;
 float cycle;
 void get_buzzer_counter(){	// for take the value of the red time
-	buzzer_counter = red_time/2;
+	buzzer_counter = red_time;
 }
 void cal_cycle() {
     //cycle = ((float)buzzer_counter / red_time) * 100.0f;	// the speaker decreases volume every 1s
