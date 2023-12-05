@@ -60,3 +60,7 @@ Nucleo_board/code/Debug/makefile
 *.xml
 *.bin
 *.list
+Nucleo_board/code/.settings/language.settings.xml
+Nucleo_board/code/Debug/BTL_VXL_PROJECT.bin
+Nucleo_board/code/Debug/BTL_VXL_PROJECT.list
+Nucleo_board/code/Debug/makefile

@@ -10,7 +10,7 @@
 #include "main.h"
 extern TIM_HandleTypeDef htim3;  // External declaration
 int buzzer_counter;
-int state_buzzer = 1	;
+int state_buzzer = 1;
 int scale_buzzer=0;
 float cycle;
 void get_buzzer_counter(){	// for take the value of the red time
@@ -35,7 +35,7 @@ void buzzer(){
 	}
 	if (timer_flag[7] == 1){// for update the PWM more detail
 		cal_cycle ();
-		__HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1, cycle);
+		__HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1, 100-cycle); // (100 - cycle) if we want we speaker gets louder and louder
 		setTimer(10, 7);// because we want to update the speaker every 100ms, so we set 10
 	}
 	// for reset the buzzer_counter
