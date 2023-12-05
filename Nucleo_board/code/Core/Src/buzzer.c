@@ -44,6 +44,7 @@ void buzzer(){
 	}
 	break;
 	case OFF:
+		__HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1, 0);
 		break;
 	default: break;
 	}
