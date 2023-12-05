@@ -119,7 +119,7 @@ int main(void)
 	  fsm_auto();
 	  fsm_manual();
 	  fsm_pedestrian_light();
-		buzzer(); // buzzer
+	  buzzer(); // buzzer
     }
   /* USER CODE END 3 */
 }
@@ -357,7 +357,6 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	scanLed(); //scan 3 LED (2 Traffic and 1 Pedestrian)
-
 	timerRun(); // software timer
 	getKeyinput(); // button
 
