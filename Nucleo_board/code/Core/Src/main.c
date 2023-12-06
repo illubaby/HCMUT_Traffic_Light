@@ -115,12 +115,15 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-//  SCH_Add_Task(timerRun, 0, 1);
-//  SCH_Add_Task(getKeyinput, 0, 1);
-//    SCH_Add_Task(fsm_auto, 0, 1);
-//    SCH_Add_Task(fsm_manual, 0, 1);
-//    SCH_Add_Task(scanLed, 0, 1);
-//    SCH_Add_Task(task1, 0, 1);// task buzzer
+  	SCH_Add_Task(scanLed, 0, 1);
+    SCH_Add_Task(timerRun, 0, 1);
+    SCH_Add_Task(getKeyinput, 0, 1);
+    SCH_Add_Task(print_statement, 0, 1);// uart
+    SCH_Add_Task(fsm_auto, 0, 1);
+    SCH_Add_Task(fsm_manual, 0, 1);
+    SCH_Add_Task(fsm_pedestrian_light, 0, 1);
+    SCH_Add_Task(buzzer, 0, 1);// task buzzer
+
   //  SCH_Add_Task(fsm_pedestrian_light, 0, 1);
 
   while (1)
@@ -128,12 +131,12 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  fsm_auto();
-	  fsm_manual();
-	  fsm_pedestrian_light();
-	  buzzer();
+//	  fsm_auto();
+//	  fsm_manual();
+//	  fsm_pedestrian_light();
+//	  buzzer();
 //	  print_statement();
-//	  SCH_Dispatch_Tasks();
+	  SCH_Dispatch_Tasks();
     }
   /* USER CODE END 3 */
 }
@@ -370,11 +373,11 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
-	scanLed(); //scan 3 LED (2 Traffic and 1 Pedestrian)
-	timerRun(); // software timer
-	getKeyinput(); // button
-	print_statement();
-//	SCH_Update();
+//	scanLed(); //scan 3 LED (2 Traffic and 1 Pedestrian)
+//	timerRun(); // software timer
+//	getKeyinput(); // button
+//	print_statement();
+	SCH_Update();
 }
 void HAL_UART_RxCpltCallback ( UART_HandleTypeDef * huart ) {
 
