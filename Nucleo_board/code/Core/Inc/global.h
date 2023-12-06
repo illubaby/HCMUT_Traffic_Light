@@ -47,3 +47,5 @@ extern int green_time; // show green time length
 extern int red_time_cd; // thoi gian den do cooldown
 extern int yellow_time_cd; // thoi gian den vang cooldown
 extern int green_time_cd; // thoi gian den xanh cooldown
+
+extern char str[100];

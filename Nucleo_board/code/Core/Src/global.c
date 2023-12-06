@@ -6,4 +6,4 @@
  */
 #include "global.h"
 
-
+char str[100] = {0};
