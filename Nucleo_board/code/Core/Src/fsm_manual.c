@@ -7,7 +7,7 @@
 #include "fsm_manual.h"
 
 
-int red_time_tmp, yellow_time_tmp, green_time_tmp;
+int red_time_tmp , yellow_time_tmp, green_time_tmp;
 
 void turnbackINIT(){
 	if (red_time < 1 || yellow_time < 1 ||

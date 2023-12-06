@@ -10,6 +10,10 @@ char tx_buffer[27] = "Hello\n\r";
 int red_time_change =0;
 int green_time_change =0;
 int yellow_time_change =0;
+
+int red_time_tmp_change =0;
+int green_time_tmp_change =0;
+int yellow_time_tmp_change =0;
 int state_uart =0;
 void test_print(){
 	HAL_UART_Transmit (&huart2 , (uint8_t *) tx_buffer, strlen( tx_buffer), 20);
@@ -63,6 +67,12 @@ void print_statement(){
 				HAL_UART_Transmit (&huart2 , (uint8_t *) strr, strlen( strr), 20);
 				state_uart = MANUAL_RED;
 			}
+			if(red_time_tmp_change != red_time_tmp){
+				sprintf( strr , "\r\n!MANUAL_RED_ADJUST=%u#\r\n", red_time_tmp);
+				strr[strlen(strr)] = '\0';  // Add null terminator
+				HAL_UART_Transmit (&huart2 , (uint8_t *) strr, strlen( strr), 20);
+				red_time_tmp_change = red_time_tmp;
+			}
 			break;
 		case MANUAL_YELLOW:
 			if(state_uart != MANUAL_YELLOW){
@@ -71,6 +81,12 @@ void print_statement(){
 				HAL_UART_Transmit (&huart2 , (uint8_t *) strr, strlen( strr), 20);
 				state_uart = MANUAL_YELLOW;
 			}
+			if(yellow_time_tmp_change != yellow_time_tmp){
+				sprintf( strr , "\r\n!MANUAL_YELLOW_ADJUST=%u#\r\n", yellow_time_tmp);
+				strr[strlen(strr)] = '\0';  // Add null terminator
+				HAL_UART_Transmit (&huart2 , (uint8_t *) strr, strlen( strr), 20);
+				yellow_time_tmp_change = yellow_time_tmp;
+			}
 			break;
 		case MANUAL_GREEN:
 			if(state_uart != MANUAL_GREEN){
@@ -78,6 +94,12 @@ void print_statement(){
 				strr[strlen(strr)] = '\0';  // Add null terminator
 				HAL_UART_Transmit (&huart2 , (uint8_t *) strr, strlen( strr), 20);
 				state_uart = MANUAL_GREEN;
+			}
+			if(green_time_tmp_change != green_time_tmp){
+				sprintf( strr , "\r\n!MANUAL_GREEN_ADJUST=%u#\r\n", green_time_tmp);
+				strr[strlen(strr)] = '\0';  // Add null terminator
+				HAL_UART_Transmit (&huart2 , (uint8_t *) strr, strlen( strr), 20);
+				green_time_tmp_change = green_time_tmp;
 			}
 			break;
 		default: break;
