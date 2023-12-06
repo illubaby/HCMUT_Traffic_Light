@@ -94,7 +94,7 @@ void scanLed(){
 		onGreen_2();
 		if(timer_flag[4] == 0){
 			onGreenPed();
-			state_buzzer =ON;//buzzer
+			state_buzzer =OFF;//buzzer
 		}else if(timer_flag[4] == 1){
 			offPed();
 			state_buzzer =OFF;//buzzer
@@ -105,7 +105,7 @@ void scanLed(){
 		onYellow_2();
 		if(timer_flag[4] == 0){
 			onGreenPed();
-			state_buzzer =ON;//buzzer
+			state_buzzer =OFF;//buzzer
 		}else if(timer_flag[4] == 1){
 			offPed();
 			state_buzzer =OFF;//buzzer
@@ -115,7 +115,7 @@ void scanLed(){
 		onGreen_1();
 		onRed_2();
 		if(timer_flag[4] == 0){
-			state_buzzer =OFF;//buzzer
+			state_buzzer =ON;//buzzer
 			onRedPed();
 		}else if(timer_flag[4] == 1){
 			state_buzzer =OFF;//buzzer
@@ -126,7 +126,7 @@ void scanLed(){
 		onYellow_1();
 		onRed_2();
 		if(timer_flag[4] == 0){
-			state_buzzer =OFF;//buzzer
+			state_buzzer =ON;//buzzer
 			onRedPed();
 		}else if(timer_flag[4] == 1){
 			state_buzzer =OFF;//buzzer

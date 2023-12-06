@@ -10,4 +10,5 @@
 
 #include"global.h"
 void print_statement();
+void test_print();
 #endif /* INC_UART_H_ */

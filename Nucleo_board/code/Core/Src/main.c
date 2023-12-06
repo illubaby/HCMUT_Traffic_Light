@@ -73,6 +73,10 @@ static void MX_TIM3_Init(void);
   * @brief  The application entry point.
   * @retval int
   */
+char tx_buffer_1[27] = "Hello\n\r";
+void test_print_1(){
+	HAL_UART_Transmit (&huart2 , (uint8_t *) tx_buffer_1, 27, 10);
+}
 int main(void)
 {
   /* USER CODE BEGIN 1 */
@@ -110,19 +114,25 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  SCH_Add_Task(task1, 0, 1);// task buzzer
-  //  SCH_Add_Task(fsm_auto, 0, 1);
-  //  SCH_Add_Task(fsm_manual, 0, 1);
+//  SCH_Add_Task(timerRun, 0, 1);
+//  SCH_Add_Task(getKeyinput, 0, 1);
+//    SCH_Add_Task(fsm_auto, 0, 1);
+//    SCH_Add_Task(fsm_manual, 0, 1);
+//    SCH_Add_Task(scanLed, 0, 1);
+//    SCH_Add_Task(task1, 0, 1);// task buzzer
   //  SCH_Add_Task(fsm_pedestrian_light, 0, 1);
+
   while (1)
     {
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-//	  fsm_auto();
-//	  fsm_manual();
-//	  fsm_pedestrian_light();
-	  SCH_Dispatch_Tasks();
+	  fsm_auto();
+	  fsm_manual();
+	  fsm_pedestrian_light();
+	  buzzer();
+//	  print_statement();
+//	  SCH_Dispatch_Tasks();
     }
   /* USER CODE END 3 */
 }
@@ -362,8 +372,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	scanLed(); //scan 3 LED (2 Traffic and 1 Pedestrian)
 	timerRun(); // software timer
 	getKeyinput(); // button
-	print_statement();
-	SCH_Update();
+	  test_print_1();
+//	SCH_Update();
 }
 void HAL_UART_RxCpltCallback ( UART_HandleTypeDef * huart ) {
 
