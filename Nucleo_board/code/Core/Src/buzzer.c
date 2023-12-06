@@ -10,7 +10,7 @@
 #include "main.h"
 extern TIM_HandleTypeDef htim3;  // External declaration
 int buzzer_counter;
-int state_buzzer = 1;
+int state_buzzer = INIT_BUZZER;
 float scale_buzzer=0;
 float cycle;
 int buzzer_flag = 1;
@@ -40,6 +40,11 @@ void cal_cycle() {
 
 void buzzer(){
 	switch(state_buzzer){
+	case INIT_BUZZER:
+		setTimer(10, 7);// for the PWM volume
+		setTimer(10, 6);// for the buzzer counter
+		setTimer(10, 8);// for the sound frequency
+		state_buzzer = OFF;
 	case ON:
 	if (timer_flag[6] == 1){// just for decrease the counter, like the red time
 		if (buzzer_counter>=0)
@@ -50,12 +55,12 @@ void buzzer(){
 	}
 	if (timer_flag[7] == 1){// for update the PWM louder and louder
 		cal_cycle ();
-		//__HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1,100- cycle);
+		//__HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1,100- cycle); // if you want the speaker only louder and louder
 		setTimer(10, 7);// because we want to update the speaker every 100ms, so we set 10
 	}
 	if (timer_flag[8] == 1){// for update the frequency
 		toggle_buzzer();
-		setTimer(frequency, 8);// because we want to update the speaker every 100ms, so we set 10
+		setTimer(frequency, 8);
 	}
 	// for reset
 	if (buzzer_counter==0){

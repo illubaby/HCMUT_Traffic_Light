@@ -108,21 +108,20 @@ int main(void)
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim2);
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
-  setTimer(10, 7);// for the PWM detail
-  setTimer(10, 6);// for the buzzer counter
 
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   	SCH_Add_Task(scanLed, 0, 1);
-    SCH_Add_Task(timerRun, 0, 1);
+	SCH_Add_Task(buzzer, 0, 1);// task buzzer
+	SCH_Add_Task(timerRun, 0, 1);
     SCH_Add_Task(getKeyinput, 0, 1);
     SCH_Add_Task(print_statement, 0, 1);// uart
     SCH_Add_Task(fsm_auto, 0, 1);
     SCH_Add_Task(fsm_manual, 0, 1);
     SCH_Add_Task(fsm_pedestrian_light, 0, 1);
-    SCH_Add_Task(buzzer, 0, 1);// task buzzer
+
 
   //  SCH_Add_Task(fsm_pedestrian_light, 0, 1);
 

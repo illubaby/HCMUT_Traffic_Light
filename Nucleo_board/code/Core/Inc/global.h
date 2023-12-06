@@ -31,6 +31,7 @@
 #define AUTO_GREEN_RED 93
 #define AUTO_YELLOW_RED 94
 //Buzzer
+#define INIT_BUZZER 0
 #define ON 1
 #define OFF 2
 //definition for manual state
