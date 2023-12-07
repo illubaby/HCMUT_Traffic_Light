@@ -8,9 +8,7 @@
 #ifndef INC_FSM_MANUAL_H_
 #define INC_FSM_MANUAL_H_
 #include "global.h"
-extern int red_time_tmp;
-extern int yellow_time_tmp;
-extern int green_time_tmp;
+
 void fsm_manual();
 void resetTimetmp ();
 

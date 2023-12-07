@@ -10,8 +10,8 @@
 int red_time_tmp , yellow_time_tmp, green_time_tmp;
 
 void turnbackINIT(){
-	if (red_time < 1 || yellow_time < 1 ||
-			green_time < 1){
+	if (red_time < 3 || yellow_time < 3 ||
+			green_time < 3){
 		red_time = 5;
 		yellow_time = 2;
 		green_time = 3;

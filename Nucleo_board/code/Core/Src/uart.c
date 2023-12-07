@@ -5,7 +5,7 @@
  *      Author: Admin
  */
 #include "uart.h"
-char strr[50];
+char strr[100];
 char tx_buffer[27] = "Hello\n\r";
 int red_time_change =0;
 int green_time_change =0;
@@ -54,7 +54,7 @@ void print_statement(){
 			break;
 		case MANUAL_INIT:
 			if(state_uart != MANUAL_INIT){
-				sprintf( strr , "\r\n!MANUAL_INIT_MODE\r\n");
+				sprintf( strr , "\r\n!MANUAL_INIT_MODE#\r\n");
 				strr[strlen(strr)] = '\0';  // Add null terminator
 				HAL_UART_Transmit (&huart2 , (uint8_t *) strr, strlen( strr), 20);
 				state_uart = MANUAL_INIT;
@@ -62,13 +62,13 @@ void print_statement(){
 			break;
 		case MANUAL_RED:
 			if(state_uart != MANUAL_RED){
-				sprintf( strr , "\r\n!MANUAL_RED_MODE\r\n");
+				sprintf( strr , "\r\n!MANUAL_RED_MODE#\r\n");
 				strr[strlen(strr)] = '\0';  // Add null terminator
 				HAL_UART_Transmit (&huart2 , (uint8_t *) strr, strlen( strr), 20);
 				state_uart = MANUAL_RED;
 			}
 			if(red_time_tmp_change != red_time_tmp){
-				sprintf( strr , "\r\n!MANUAL_RED_ADJUST=%u#\r\n", red_time_tmp);
+				sprintf( strr , "\r\n!RED_ADJUST=%u#\r\n", red_time_tmp);
 				strr[strlen(strr)] = '\0';  // Add null terminator
 				HAL_UART_Transmit (&huart2 , (uint8_t *) strr, strlen( strr), 20);
 				red_time_tmp_change = red_time_tmp;
@@ -76,13 +76,13 @@ void print_statement(){
 			break;
 		case MANUAL_YELLOW:
 			if(state_uart != MANUAL_YELLOW){
-				sprintf( strr , "\r\n!MANUAL_YELLOW_MODE\r\n");
+				sprintf( strr , "\r\n!MANUAL_YELLOW_MODE#\r\n");
 				strr[strlen(strr)] = '\0';  // Add null terminator
 				HAL_UART_Transmit (&huart2 , (uint8_t *) strr, strlen( strr), 20);
 				state_uart = MANUAL_YELLOW;
 			}
 			if(yellow_time_tmp_change != yellow_time_tmp){
-				sprintf( strr , "\r\n!MANUAL_YELLOW_ADJUST=%u#\r\n", yellow_time_tmp);
+				sprintf( strr , "\r\n!YELLOW_ADJUST=%u#\r\n", yellow_time_tmp);
 				strr[strlen(strr)] = '\0';  // Add null terminator
 				HAL_UART_Transmit (&huart2 , (uint8_t *) strr, strlen( strr), 20);
 				yellow_time_tmp_change = yellow_time_tmp;
@@ -90,13 +90,13 @@ void print_statement(){
 			break;
 		case MANUAL_GREEN:
 			if(state_uart != MANUAL_GREEN){
-				sprintf( strr , "\r\n!MANUAL_GREEN_MODE\r\n");
+				sprintf( strr , "\r\n!MANUAL_GREEN_MODE#\r\n");
 				strr[strlen(strr)] = '\0';  // Add null terminator
 				HAL_UART_Transmit (&huart2 , (uint8_t *) strr, strlen( strr), 20);
 				state_uart = MANUAL_GREEN;
 			}
 			if(green_time_tmp_change != green_time_tmp){
-				sprintf( strr , "\r\n!MANUAL_GREEN_ADJUST=%u#\r\n", green_time_tmp);
+				sprintf( strr , "\r\n!GREEN_ADJUST=%u#\r\n", green_time_tmp);
 				strr[strlen(strr)] = '\0';  // Add null terminator
 				HAL_UART_Transmit (&huart2 , (uint8_t *) strr, strlen( strr), 20);
 				green_time_tmp_change = green_time_tmp;
