@@ -18,6 +18,10 @@ int frequency;
 void get_buzzer_counter(){	// for take the value of the red time
 	buzzer_counter = red_time;
 }
+void set_buzzer_timer(int duration_time){
+	buzzer_counter  = duration_time;
+	frequency  = duration_time;
+}
 void toggle_buzzer(){
 	if (buzzer_flag == 1){
 		buzzer_flag = 0 ;
