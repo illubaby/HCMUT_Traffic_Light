@@ -8,9 +8,15 @@
 #include "fsm_pedestrian_light.h"
 #include "buzzer.h"
 
+int ped_status = INIT;
+int ped_cycle = 0 ;
+int ped_signal = 0;
+
 void fsm_pedestrian_light(){
 	if(isButtonPressed(3)){
-		setTimer(1500,4);
+		ped_status = status;
+		ped_cycle = 0;
+		ped_signal = 1;
 	}
 	//state cho buzzer cua Kiet
 //	switch (status){

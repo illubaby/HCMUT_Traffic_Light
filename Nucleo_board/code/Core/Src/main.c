@@ -113,7 +113,7 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-	SCH_Add_Task(buzzer, 0, 1);// task buzzer
+//	SCH_Add_Task(buzzer, 0, 1);// task buzzer
 	SCH_Add_Task(timerRun, 0, 1);
 	SCH_Add_Task(scanLed, 0, 1);
     SCH_Add_Task(getKeyinput, 0, 1);

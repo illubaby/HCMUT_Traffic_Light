@@ -92,45 +92,51 @@ void scanLed(){
 	case AUTO_RED_GREEN:
 		onRed_1();
 		onGreen_2();
-		if(timer_flag[4] == 0){
+		if (ped_signal == 1){
 			onGreenPed();
 			state_buzzer =OFF;//buzzer
-		}else if(timer_flag[4] == 1){
-			offPed();
-			state_buzzer =OFF;//buzzer
 		}
+		else if (ped_signal == 0){
+			offPed();
+			state_buzzer = OFF;
+		}
+
 		break;
 	case AUTO_RED_YELLOW:
 		onRed_1();
 		onYellow_2();
-		if(timer_flag[4] == 0){
+		if (ped_signal == 1){
 			onGreenPed();
 			state_buzzer =OFF;//buzzer
-		}else if(timer_flag[4] == 1){
+		}
+		else if (ped_signal == 0){
 			offPed();
-			state_buzzer =OFF;//buzzer
+			state_buzzer = OFF;
 		}
 		break;
 	case AUTO_GREEN_RED:
 		onGreen_1();
 		onRed_2();
-		if(timer_flag[4] == 0){
+		if (ped_signal == 1){
 			state_buzzer =ON;//buzzer
 			onRedPed();
-		}else if(timer_flag[4] == 1){
-			state_buzzer =OFF;//buzzer
+
+		}
+		else if (ped_signal == 0){
 			offPed();
+			state_buzzer = OFF;
 		}
 		break;
 	case AUTO_YELLOW_RED:
 		onYellow_1();
 		onRed_2();
-		if(timer_flag[4] == 0){
+		if (ped_signal == 1){
 			state_buzzer =ON;//buzzer
 			onRedPed();
-		}else if(timer_flag[4] == 1){
-			state_buzzer =OFF;//buzzer
+		}
+		else if (ped_signal == 0){
 			offPed();
+			state_buzzer = OFF;
 		}
 		break;
 	case MANUAL_RED:
