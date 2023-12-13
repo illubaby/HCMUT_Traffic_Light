@@ -18,10 +18,9 @@ stateDiagram-v2
         Green_State --> Tuning_Green : Button 2 Pressed
     }
     state TuningMode{
-
-        Tuning_Red :
-        Tuning_Yellow:
-        Tuning_Green:
+        Tuning_Red  : 
+        Tuning_Yellow  : 
+        Tuning_Green  : 
 
     }
     note right of TuningMode : Button 2 to increase value \n 
