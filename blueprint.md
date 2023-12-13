@@ -3,7 +3,6 @@ stateDiagram-v2
     AutomaticMode-->Manual_Mode: Button 1 Pressed
     %% Manual_Mode --> TuningMode : 
 
-     TuningMode-->Manual_Mode: Button 1 Pressed
     TuningMode -->AutomaticMode: Button 1 pressed
 
     AutomaticMode --> PedestrianScramble : Pedestrian Button Pressed
@@ -20,12 +19,13 @@ stateDiagram-v2
     }
     state TuningMode{
 
-        Tuning_Red  --> Tuning_Red : Button 3 Pressed
-        Tuning_Yellow  --> Tuning_Yellow: Button 3 Pressed
-        Tuning_Green  --> Tuning_Green: Button 3 Pressed 
+        Tuning_Red :
+        Tuning_Yellow:
+        Tuning_Green:
 
     }
     note right of TuningMode : Button 2 to increase value \n 
+    note right of TuningMode : Button 3 to confirm value \n 
 
     state AutomaticMode {
         [*] --> Red
