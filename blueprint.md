@@ -10,6 +10,7 @@ stateDiagram-v2
 
     Manual_Mode-->AutomaticMode: After a ... time
     state Manual_Mode{
+        Manual INIT --> Red_State
         Red_State --> Yellow_State : Button 1 Pressed
         Yellow_State --> Green_State : Button 1 Pressed
         Green_State --> Red_State : Button 1 Pressed
@@ -27,7 +28,7 @@ stateDiagram-v2
     note right of TuningMode : Button 3 to confirm value \n 
 
     state AutomaticMode {
-        [*] --> Red
+        INIT --> Red
         Red --> Yellow : Timer
         Yellow --> Green : Timer
         Green --> Red : Timer
